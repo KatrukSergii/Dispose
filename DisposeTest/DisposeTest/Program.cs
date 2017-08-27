@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DisposeTest
 {
@@ -10,6 +6,11 @@ namespace DisposeTest
     {
         static void Main(string[] args)
         {
+            using (FileWritter writter = new FileWritter("test.txt"))
+            {
+                string textToWrite = "Test text";
+                writter.Write(textToWrite);
+            }
         }
     }
 }
